@@ -1,5 +1,39 @@
 "use client";
 export default function Home() {
+  const [contacts, setContacts] = useState([]);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+
+  const addContact = () => {
+    if (!name || !email || !phone) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    setContacts([...contacts, { name, email, phone }]);
+    clearForm();
+  };
+
+  const editContact = (index) => {
+    const editedContact = contacts[index];
+    setName(editedContact.name);
+    setEmail(editedContact.email);
+    setPhone(editedContact.phone);
+
+    setContacts(contacts.filter((_, i) => i !== index));
+  };
+
+  const deleteContact = (index) => {
+    setContacts(contacts.filter((_, i) => i !== index));
+  };
+
+  const clearForm = () => {
+    setName("");
+    setEmail("");
+    setPhone("");
+  };
+
   return (
     <div className="pl-10 mt-10">
       <h1 className="mb-5 text-3xl">Contact Management App</h1>
