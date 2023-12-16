@@ -37,11 +37,11 @@ export default function Home() {
   };
 
   return (
-    <div className="pl-10 mt-10">
+    <div className="pl-10 mt-10 bg-yellow-700">
       <h1 className="mb-5 text-3xl">Contact Management App</h1>
 
       <form>
-        <label className="block text-sm font-medium text-gray-700 ">
+        <label className="block text-sm font-medium text-black ">
           Name:
           <input
             type="text"
@@ -50,7 +50,7 @@ export default function Home() {
           />
         </label>
         <br />
-        <label className="block text-sm font-medium text-gray-700">
+        <label className="block text-sm font-medium text-black">
           Email:
           <input
             type="email"
@@ -59,7 +59,7 @@ export default function Home() {
           />
         </label>
         <br />
-        <label className="block text-sm font-medium text-gray-700">
+        <label className="block text-sm font-medium text-black">
           Phone:
           <input
             type="tel"
