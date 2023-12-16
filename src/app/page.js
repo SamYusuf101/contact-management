@@ -41,6 +41,35 @@ export default function Home() {
           Add Contact
         </button>
       </form>
+      <ul className="flex flex-col  space-y-2 mt-5">
+        {contacts.map((contact, index) => (
+          <li key={index}>
+            {contact.name}, {contact.email}, {contact.phone}
+            <div>
+              {" "}
+              <button
+                onClick={() => editContact(index)}
+                className="py-2 px-4 bg-red-500 text-white font-semibold mt-3
+            rounded-lg shadow-md hover:bg-yellow-400 
+            focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+              >
+                Edit
+              </button>
+            </div>
+            <div>
+              {" "}
+              <button
+                onClick={() => deleteContact(index)}
+                className="py-2 px-4 bg-red-500 text-white font-semibold mt-3
+            rounded-lg shadow-md hover:bg-yellow-400 
+            focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+              >
+                Delete
+              </button>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
