@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+
 export default function Home() {
   const [contacts, setContacts] = useState([]);
   const [name, setName] = useState("");
@@ -38,6 +39,7 @@ export default function Home() {
   return (
     <div className="pl-10 mt-10">
       <h1 className="mb-5 text-3xl">Contact Management App</h1>
+
       <form>
         <label className="block text-sm font-medium text-gray-700 ">
           Name:
@@ -76,6 +78,7 @@ export default function Home() {
           Add Contact
         </button>
       </form>
+
       <ul className="flex flex-col  space-y-2 mt-5">
         {contacts.map((contact, index) => (
           <li key={index}>
